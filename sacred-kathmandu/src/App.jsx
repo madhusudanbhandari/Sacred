@@ -12,45 +12,23 @@ function App() {
     // STATE MANAGEMENT
     const [searchTerm, setSearchTerm] = useState('');
     const [currentFilter, setCurrentFilter] = useState('all');
-    const [currentDistrict, setCurrentDistrict] = useState('all');
     const [selectedSite, setSelectedSite] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // GET UNIQUE DISTRICTS - SIMPLIFIED
-    const getDistricts = () => {
-        const districtSet = new Set();
-        religiousSites.forEach(site => {
-            if (site.district) {
-                districtSet.add(site.district);
-            }
-        });
-        return Array.from(districtSet).sort();
-    };
-
-    const districts = getDistricts();
-
     // FILTER LOGIC
-    const getFilteredSites = () => {
-        return religiousSites.filter(site => {
-            // Filter by district
-            const matchesDistrict = currentDistrict === 'all' || site.district === currentDistrict;
-            
-            // Filter by category/type
-            const matchesFilter = currentFilter === 'all' || site.type === currentFilter;
-            
-            // Filter by search term
-            const matchesSearch = searchTerm === '' || 
-                site.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                site.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                site.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                site.significance.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                (site.district && site.district.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredSites = religiousSites.filter(site => {
+        // Filter by category
+        const matchesFilter = currentFilter === 'all' || site.type === currentFilter;
+        
+        // Filter by search term
+        const matchesSearch = searchTerm === '' || 
+            site.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            site.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            site.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            site.significance.toLowerCase().includes(searchTerm.toLowerCase());
 
-            return matchesDistrict && matchesFilter && matchesSearch;
-        });
-    };
-
-    const filteredSites = getFilteredSites();
+        return matchesFilter && matchesSearch;
+    });
 
     // OPEN MODAL
     const openModal = (siteId) => {
@@ -77,9 +55,6 @@ function App() {
                     onSearchChange={setSearchTerm}
                     currentFilter={currentFilter}
                     onFilterChange={setCurrentFilter}
-                    currentDistrict={currentDistrict}
-                    onDistrictChange={setCurrentDistrict}
-                    districts={districts}
                 />
                 
                 <SiteGrid

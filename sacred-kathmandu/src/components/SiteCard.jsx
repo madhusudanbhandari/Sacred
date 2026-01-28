@@ -8,10 +8,7 @@ function SiteCard({ site, onOpenModal }) {
                 <div className="site-header">
                     <div>
                         <div className="site-title">{site.name}</div>
-                        <div className="site-badges">
-                            <span className="site-type">{site.type}</span>
-                            <span className="site-district">{site.district}</span>
-                        </div>
+                        <span className="site-type">{site.type}</span>
                     </div>
                 </div>
                 <div className="site-info">

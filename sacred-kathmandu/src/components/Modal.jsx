@@ -35,10 +35,7 @@ function Modal({ site, isOpen, onClose }) {
                 </div>
                 <div className="modal-body">
                     <h2 className="modal-title">{site.name}</h2>
-                    <div className="modal-badges">
-                        <span className="modal-type">{site.type}</span>
-                        <span className="modal-district">{site.district} District</span>
-                    </div>
+                    <span className="modal-type">{site.type}</span>
 
                     <div className="detail-section">
                         <h3><i className="fas fa-star"></i> Significance</h3>
@@ -87,27 +84,15 @@ function Modal({ site, isOpen, onClose }) {
 
                     <div className="detail-section">
                         <h3><i className="fas fa-map-marker-alt"></i> Location</h3>
-                        <div className="detail-grid">
-                            <div className="detail-item">
-                                <div className="detail-label">District</div>
-                                <div className="detail-value">{site.district}</div>
-                            </div>
-                            <div className="detail-item">
-                                <div className="detail-label">Address</div>
-                                <div className="detail-value">{site.location}</div>
-                            </div>
-                            <div className="detail-item">
-                                <div className="detail-label">Coordinates</div>
-                                <div className="detail-value">{site.coordinates}</div>
-                            </div>
-                        </div>
+                        <p><strong>{site.location}</strong></p>
+                        <p>Coordinates: {site.coordinates}</p>
                         <div className="map-placeholder">
                             <i className="fas fa-map"></i> Map View (Google Maps integration coming soon)
                         </div>
                     </div>
 
                     <div className="detail-section">
-                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', gap: '1rem' }}>
                             <button className="btn btn-primary" onClick={viewOnMap}>
                                 <i className="fas fa-directions"></i> Get Directions
                             </button>
