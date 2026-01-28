@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 
 function Modal({ site, isOpen, onClose }) {
-    // Close modal on Escape key
     useEffect(() => {
         const handleEscape = (e) => {
             if (e.key === 'Escape') onClose();
@@ -26,16 +25,30 @@ function Modal({ site, isOpen, onClose }) {
         window.open(mapsUrl, '_blank');
     };
 
+    console.log('Modal rendering, isOpen:', isOpen, 'site:', site); // DEBUG
+
     return (
         <div className={`modal ${isOpen ? 'active' : ''}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <div className="modal-header">
+                <div className="modal-header" style={{ 
+                    height: '300px',
+                    background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative'
+                }}>
                     <button className="close-modal" onClick={onClose}>×</button>
-                    {site.icon}
+                    <span style={{ fontSize: '6rem', color: 'white' }}>{site.icon}</span>
                 </div>
                 <div className="modal-body">
                     <h2 className="modal-title">{site.name}</h2>
-                    <span className="modal-type">{site.type}</span>
+                    <div className="modal-badges">
+                        <span className="modal-type">{site.type}</span>
+                        {site.district && (
+                            <span className="modal-district">{site.district} District</span>
+                        )}
+                    </div>
 
                     <div className="detail-section">
                         <h3><i className="fas fa-star"></i> Significance</h3>
@@ -84,15 +97,29 @@ function Modal({ site, isOpen, onClose }) {
 
                     <div className="detail-section">
                         <h3><i className="fas fa-map-marker-alt"></i> Location</h3>
-                        <p><strong>{site.location}</strong></p>
-                        <p>Coordinates: {site.coordinates}</p>
+                        <div className="detail-grid">
+                            {site.district && (
+                                <div className="detail-item">
+                                    <div className="detail-label">District</div>
+                                    <div className="detail-value">{site.district}</div>
+                                </div>
+                            )}
+                            <div className="detail-item">
+                                <div className="detail-label">Address</div>
+                                <div className="detail-value">{site.location}</div>
+                            </div>
+                            <div className="detail-item">
+                                <div className="detail-label">Coordinates</div>
+                                <div className="detail-value">{site.coordinates}</div>
+                            </div>
+                        </div>
                         <div className="map-placeholder">
                             <i className="fas fa-map"></i> Map View (Google Maps integration coming soon)
                         </div>
                     </div>
 
                     <div className="detail-section">
-                        <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             <button className="btn btn-primary" onClick={viewOnMap}>
                                 <i className="fas fa-directions"></i> Get Directions
                             </button>
