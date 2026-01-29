@@ -9,7 +9,7 @@ function Footer() {
                         <h3>About</h3>
                         <p>Sacred Kathmandu is your comprehensive guide to exploring the rich religious heritage of Kathmandu Valley.</p>
                     </div>
-                    {/* <div className="footer-section">
+                    <div className="footer-section">
                         <h3>Quick Links</h3>
                         <p>Plan Your Visit<br />Cultural Guidelines<br />Contact Us</p>
                     </div>
@@ -20,7 +20,7 @@ function Footer() {
                             <i className="fab fa-instagram"></i> Instagram<br />
                             <i className="fab fa-twitter"></i> Twitter
                         </p>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="footer-bottom">
                     <p>&copy; 2026 Sacred Kathmandu. Preserving Heritage, Inspiring Faith.</p>

@@ -1,7 +1,6 @@
 import React from 'react';
 
 function StatsCards({ sites }) {
-    // Calculate counts
     const templeCount = sites.filter(s => s.type === 'Hindu Temple').length;
     const monasteryCount = sites.filter(s => s.type === 'Buddhist Monastery').length;
     const mosqueCount = sites.filter(s => s.type === 'Mosque').length;
