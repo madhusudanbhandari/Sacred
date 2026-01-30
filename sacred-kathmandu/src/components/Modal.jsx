@@ -85,8 +85,16 @@ function Modal({ site, isOpen, onClose }) {
                         <h3><i className="fas fa-map-marker-alt"></i> Location</h3>
                         <p><strong>{site.location}</strong></p>
                         <p>Coordinates: {site.coordinates}</p>
-                        <div className="map-placeholder">
-                            <i className="fas fa-map"></i> Map View (Google Maps integration coming soon)
+                        <div style={{ marginTop: '15px' }}>
+                             <iframe
+                              width="100%"
+                              height="300"
+                              style={{ border: 0, borderRadius: '15px' }}
+                              loading="lazy"
+                              allowFullScreen
+                              referrerPolicy="no-referrer-when-downgrade"
+                              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(site.coordinates)}&zoom=15`}
+                            />
                         </div>
                     </div>
 
