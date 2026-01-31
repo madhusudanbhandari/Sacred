@@ -28,10 +28,47 @@ function Modal({ site, isOpen, onClose }) {
     return (
         <div className={`modal ${isOpen ? 'active' : ''}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <div className="modal-header">
-                    <button className="close-modal" onClick={onClose}>×</button>
-                    {site.icon}
-                </div>
+                                   {/* Header with Image */}
+<div style={{
+    position: 'relative',
+    height: '300px',
+    background: site.imageUrl 
+        ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(${site.imageUrl})`
+        : 'linear-gradient(135deg, #b45309 0%, #d97706 100%)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '20px 20px 0 0'
+}}>
+    <button 
+        onClick={onClose}
+        style={{
+            position: 'absolute',
+            top: '15px',
+            right: '15px',
+            background: 'rgba(255,255,255,0.3)',
+            border: 'none',
+            color: 'white',
+            fontSize: '30px',
+            width: '45px',
+            height: '45px',
+            borderRadius: '50%',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 10
+        }}
+    >
+        ×
+    </button>
+    <span style={{ fontSize: '80px', color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+        {site.icon}
+    </span>
+</div>
+               
                 <div className="modal-body">
                     <h2 className="modal-title">{site.name}</h2>
                     <span className="modal-type">{site.type}</span>
@@ -87,7 +124,7 @@ function Modal({ site, isOpen, onClose }) {
                         <p>Coordinates: {site.coordinates}</p>
                         <div style={{ marginTop: '15px' }}>
                              <iframe
-                              width="100%"
+                              title={`Map of ${site.name}`}                              width="100%"
                               height="300"
                               style={{ border: 0, borderRadius: '15px' }}
                               loading="lazy"

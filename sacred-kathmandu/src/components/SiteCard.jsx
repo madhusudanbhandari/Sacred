@@ -3,7 +3,20 @@ import React from 'react';
 function SiteCard({ site, onOpenModal }) {
     return (
         <div className="site-card" onClick={() => onOpenModal(site.id)}>
-            <div className="site-image">{site.icon}</div>
+            {/* Image or Icon */}
+            {site.imageUrl ? (
+                <div 
+                    className="site-image"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(${site.imageUrl})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                />
+            ) : (
+                <div className="site-image">{site.icon}</div>
+            )}
+            
             <div className="site-content">
                 <div className="site-header">
                     <div>
@@ -18,7 +31,7 @@ function SiteCard({ site, onOpenModal }) {
                     </div>
                     <div className="info-row">
                         <i className="fas fa-clock"></i>
-                        <span>{site.openingHours.split('(')[0]}</span>
+                        <span>{site.openingHours?.split('(')[0] || site.openingHours}</span>
                     </div>
                     <div className="info-row">
                         <i className="fas fa-ticket-alt"></i>
