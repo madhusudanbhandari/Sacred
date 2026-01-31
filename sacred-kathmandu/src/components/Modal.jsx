@@ -64,9 +64,7 @@ function Modal({ site, isOpen, onClose }) {
     >
         ×
     </button>
-    <span style={{ fontSize: '80px', color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-        {site.icon}
-    </span>
+    
 </div>
                
                 <div className="modal-body">
