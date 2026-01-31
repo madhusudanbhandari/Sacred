@@ -64,7 +64,9 @@ function Modal({ site, isOpen, onClose }) {
     >
         ×
     </button>
-    
+    <span style={{ fontSize: '80px', color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+        {site.icon}
+    </span>
 </div>
                
                 <div className="modal-body">
@@ -122,7 +124,7 @@ function Modal({ site, isOpen, onClose }) {
                         <p>Coordinates: {site.coordinates}</p>
                         <div style={{ marginTop: '15px' }}>
                              <iframe
-                              title={`Map of ${site.name}`}                              width="100%"
+                            title={`Map of ${site.name}`}                              width="100%"
                               height="300"
                               style={{ border: 0, borderRadius: '15px' }}
                               loading="lazy"

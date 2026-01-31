@@ -5,7 +5,7 @@ export const religiousSites = [
         name: "Pashupatinath Temple",
         type: "Hindu Temple",
         icon: "🕉️",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Pashupatinath_Temple-2021.jpg/800px-Pashupatinath_Temple-2021.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Pashupatinath_Temple-2021.jpg/800px-Pashupatinath_Temple-2021.jpg",
         district: "Kathmandu",
         location: "Gaushala, Kathmandu",
         coordinates: "27.7106°N, 85.3486°E",
