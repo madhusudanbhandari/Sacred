@@ -44,7 +44,7 @@ export const religiousSites = [
         name: "Boudhanath Stupa",
         type: "Buddhist Monastery",
         icon: "☸️",
-imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Boudhanath_Stupa%2C_Kathmandu%2C_Nepal.jpg",
+imageUrl:"https://unsplash.com/s/photos/boudhanath-stupa",
         district: "Kathmandu",
         location: "Boudha, Kathmandu",
         coordinates: "27.7215°N, 85.3621°E",
@@ -63,7 +63,7 @@ imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Boudhanath_Stupa%
         name: "Budhanilkantha Temple",
         type: "Hindu Temple",
         icon: "🕉️",
-            imageUrl: "https://source.unsplash.com/600x400/?budhanilkantha,vishnu,temple,nepal",
+            imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/87/Budanilkantha_Temple_Budanilkantha_Kathmandu_Nepal_Rajesh_Dhungana_%2813%29.jpg",
 
         district: "Kathmandu",
         location: "Budhanilkantha, Kathmandu",
