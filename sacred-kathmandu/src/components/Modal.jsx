@@ -29,14 +29,14 @@ function Modal({ site, isOpen, onClose }) {
         <div className={`modal ${isOpen ? 'active' : ''}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
   
-          <div 
+          {/* <div 
              className="site-image"
              style={{
              backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(${site.imageUrl})`,
              backgroundSize: 'cover',
              backgroundPosition: 'center'
             }}
-        />
+        /> */}
 
                
                 <div className="modal-body">

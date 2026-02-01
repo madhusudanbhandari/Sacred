@@ -3,8 +3,8 @@ import React from 'react';
 function SiteCard({ site, onOpenModal }) {
     return (
         <div className="site-card" onClick={() => onOpenModal(site.id)}>
-            {/* Image or Icon */}
-            {site.imageUrl ? (
+           
+{/*            
                 <div 
                     className="site-image"
                     style={{
@@ -12,10 +12,10 @@ function SiteCard({ site, onOpenModal }) {
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}
-                />
-            ) : (
+                /> */}
+            
                 <div className="site-image">{site.icon}</div>
-            )}
+            
             
             <div className="site-content">
                 <div className="site-header">
