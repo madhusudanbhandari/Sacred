@@ -96,7 +96,8 @@ function Modal({ site, isOpen, onClose }) {
                         <p>Coordinates: {site.coordinates}</p>
                         <div style={{ marginTop: '15px' }}>
                              <iframe
-                            title={`Map of ${site.name}`}                              width="100%"
+                            title={`Map of ${site.name}`}                          
+                              width="100%"
                               height="300"
                               style={{ border: 0, borderRadius: '15px' }}
                               loading="lazy"
