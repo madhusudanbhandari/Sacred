@@ -37,6 +37,8 @@ function Modal({ site, isOpen, onClose }) {
              backgroundPosition: 'center'
             }}
         /> */}
+                        <div className="site-image">{site.icon}</div>
+
 
                
                 <div className="modal-body">
